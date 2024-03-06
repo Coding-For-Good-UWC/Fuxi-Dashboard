@@ -38,7 +38,28 @@ app.get('/user', async (req, res) => {
     }
 })
 
+app.post('/user/new', async(req, res) =>
+{
+    try{
+        // const { username, password } = req.body;
 
+        const username = req.body.username; 
+        const password = req.body.password; 
+
+        const message = `TODO: make new user with username: ${username} and password: ${password}`; 
+        
+        console.log (message); 
+
+        const dataToSend = { 
+            message: message 
+        }
+
+        res.status(200).json(dataToSend); 
+    }
+    catch (error) {
+        res.status(500).json({ message: "Server error" })
+    }
+})
 
 
 app.listen(PORT, () => // fire up express server
