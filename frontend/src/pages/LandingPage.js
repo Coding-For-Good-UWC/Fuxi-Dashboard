@@ -1,5 +1,6 @@
 import React from 'react'; 
 import { useNavigate } from 'react-router-dom';
+import classes from './LandingPage.module.css'; 
 
 function LandingPage () 
 {
@@ -12,7 +13,7 @@ function LandingPage ()
 
     return (
         <div>
-            <h1>Landing Page</h1>
+            <h1 className={classes.title}>Landing Page</h1>
             <button onClick={handleLogin}>Login</button>
         </div>
     )
