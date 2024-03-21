@@ -1,0 +1,38 @@
+.main 
+{
+    display: flex;
+    font-family: sans-serif;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    gap: 20px;
+
+}
+
+.logIn {
+    background-color: #137882;
+    color: white;
+    width: 50vw;
+    height: 5vh;
+    border-radius: 10vh;
+    border-color: #137882;
+
+
+
+}
+
+.signUp {
+    background-color: white;
+    width: 50vw;
+    height: 5vh;
+    border-radius: 10vh;
+
+}
