@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 
-function MainPage()
+function DashboardPage()
 {
     const navigate = useNavigate();
 
@@ -12,11 +12,11 @@ function MainPage()
     return(
         <div>
 
-        <h1>Main Page</h1>
+        <h1>Dashboard Page</h1>
         </div>
     )
 }
 
 
 
-export default MainPage;
+export default DashboardPage;
