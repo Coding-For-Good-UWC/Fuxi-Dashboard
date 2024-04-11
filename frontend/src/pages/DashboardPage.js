@@ -31,7 +31,7 @@ function DashboardPage()
 
     return (
         <div className = {classes.container}>
-            <h1 className = {classes.SongCategoriesText}>Song Categories</h1>
+            <h1 className = {classes.songCategoriesText}>Song Categories</h1>
             <div className = {classes.grid}>
                 { Object.keys(categories).length > 0 && categories.map((category, index) => 
                     <div className={classes.categories} key={index}>
