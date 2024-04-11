@@ -27,16 +27,20 @@ function DashboardPage()
         getCategoriesData(); 
     }, []); 
 
-  
+    
 
     return (
         <div className = {classes.container}>
             <h1 className = {classes.SongCategoriesText}>Song Categories</h1>
             <div className = {classes.grid}>
-                { Object.keys(categories).length > 0 && categories.map((category, index) => <div className={classes.categories} key={index}>
-                    <h2>{category.categoryName}</h2>
-                    <h3>{category.colour}</h3>
-            </div>) }
+                { Object.keys(categories).length > 0 && categories.map((category, index) => 
+                    <div className={classes.categories} key={index}>
+                        <h2>{category.categoryName}</h2>
+                        {/* <h3>{category.colour}</h3> */}
+                        <div className = {classes.tags} style={{ backgroundColor: category.colour }} />
+                    
+                    </div>
+                )}
             <h2 className = {classes.newCategory}>+</h2>
             </div>
         </div>
