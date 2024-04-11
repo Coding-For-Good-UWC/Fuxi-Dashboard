@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import LandingPage from './pages/LandingPage';
 import LoginPage from './pages/LoginPage';
-import DashboardPage from './pages/MainPage';
+import DashboardPage from './pages/DashboardPage';
 import SongManagementPage from './pages/SongManagementPage';
 
 import SongUploadPage from './pages/SongUploadPage';
@@ -19,7 +19,7 @@ function App() {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path = "/main" element = {<DashboardPage/>} />
+        <Route path = "/dashboard" element = {<DashboardPage/>} />
         <Route path = "/song/management" element = {<SongManagementPage/>}/>
         <Route path = "/song/preview" element = {<SongPreviewPage/>}/>
         <Route path = "/song/upload" element = {<SongUploadPage/>}/>

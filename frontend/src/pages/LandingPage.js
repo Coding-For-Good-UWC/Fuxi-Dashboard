@@ -11,9 +11,9 @@ function LandingPage ()
         navigate("/login"); 
     }
 
-    const handleMain = () => 
+    const handleDashboard = () => 
     {
-        navigate("/main");
+        navigate("/dashboard");
     }
 
     const handleSongManagement = () => 
@@ -42,7 +42,7 @@ function LandingPage ()
         <div>
             <h1 className={classes.title}>Landing Page</h1>
             <button onClick={handleLogin}>Login</button>
-            <button onClick = {handleMain}>Dashboard Page</button>
+            <button onClick = {handleDashboard}>Dashboard Page</button>
             <button onClick = {handleSongManagement}>Manage Songs</button>
             <button onClick = {handleSongPreview}>Preview Songs</button>
             <button onClick = {handleSongUpload}>Upload Songs</button>

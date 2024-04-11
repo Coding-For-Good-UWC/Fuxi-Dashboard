@@ -61,6 +61,61 @@ app.post('/user/new', async(req, res) =>
     }
 })
 
+app.get("/dashboard/categories", async (req, res) => {
+    try {
+        const Dummy_Data = [
+            {
+                _id: "0",
+                categoryName: "Country Music",
+                colour: 'purple'
+            },
+            {
+                _id: "1",
+                categoryName: "Malay Music",
+                colour: 'white'
+            },
+            {
+                _id: "2",
+                categoryName: "Balinese Traditional Music",
+                colour: 'green'
+            },
+            {
+                _id: "3",
+                categoryName: "Singaporean Music",
+                colour: 'orange'
+            },
+            {
+                _id: "4",
+                categoryName: "Chinese Music",
+                colour: 'pink'
+            },
+            {
+                _id: "5",
+                categoryName: "Japanese Music",
+                colour: 'blue'
+            },
+            {
+                _id: "6",
+                categoryName: "Classical Music",
+                colour: 'red'
+            },
+        ];
+
+        const dataToSend = {
+            categories: Dummy_Data,
+            status: "SUCCESS",
+            message: "Successfully retrieved categories for user"
+        }
+        
+
+        res.status(200).json(dataToSend);
+    }
+    catch (error) {
+        res.status(500).json({ message: "Server error" })
+    }
+
+})
+
 
 app.listen(PORT, () => // fire up express server
 {

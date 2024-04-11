@@ -23,6 +23,8 @@
 
 .menu{
     font-size: 30px;
+    color: var(--gray);
+   
 
 }
 
@@ -48,6 +50,7 @@
 
 .pfp{
     font-size: 30px;
+    color: var(--gray);
 
 }
 
