@@ -1,20 +1,44 @@
 .container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    height: 100px;
+    /* border-bottom: 0.5vh solid black; */
+    padding-left: 25px;
+    padding-right: 25px;
 
 }
 
 .title{
-
+    margin: 5px;
+    font-size: 60px;
 }
 
 .subtitle{
+    margin: 5px;
 
 }
 
 .menu{
+    font-size: 30px;
 
 }
 
-.usernamePfp{
+.leftContainer{
+
+    width: 20vh;
+}
+
+
+.rightContainer{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    width: 20vh;
+    justify-content: right;
+    align-items: center;
 
 }
 
@@ -23,9 +47,24 @@
 }
 
 .pfp{
-    
+    font-size: 30px;
+
 }
 
+.centerContainer{
+    width: 70vh;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    margin-top: 5px;
+    padding-top: 5px;
+   
+    
+
+}
 
 
 
