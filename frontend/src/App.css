@@ -34,6 +34,7 @@ p {
 button, input[type="submit"] {
   border: 0;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+  font-family: "Rubik", sans-serif;
 }
 
 input{
