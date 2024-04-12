@@ -23,7 +23,7 @@ function Navbar ()
         <div className = {classes.container}>
             <div className = {classes.leftContainer}>
                 <FaIcons.FaBars className = {classes.menu}/>
-                <h1 onClick = {toDashboardPage} className = {classes.title}>Fuxi Dashboard</h1>
+                <h1 onClick = {toDashboardPage} className = {classes.title}>Project FUXI</h1>
                 {/* <h2 className = {classes.subtitle}>Tapping into the power of music for Persons with Dementia</h2> */}
             </div>
             
