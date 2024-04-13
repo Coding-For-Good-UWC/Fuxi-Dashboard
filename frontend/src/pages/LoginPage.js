@@ -1,12 +1,17 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import classes from './LoginPage.module.css';
+import Login from '../components/Login';
+import WomanFlipped from '../assets/WomanFlipped.png'
+// import Login from
 
 function LoginPage() {
     const navigate = useNavigate();
 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+
+    const [isLogin, setIsLogin] = useState(false); // is it login or signup? 
 
     const returnToLanding = () => {
         navigate("/");
@@ -33,28 +38,22 @@ function LoginPage() {
     }
 
     return (
-        <div className={classes.main}>
-            <h1>Project FUXI</h1>
-            <h2>Tapping into the power of music<br/>for Persons with Dementia</h2>
-            <form onSubmit={(event) => handleLogin(event)}>
-                <p>Username:</p>
-                <input
-                    type="text"
-                    placeholder='username'
-                    onChange={(event) => setUsername(event.target.value)}>
-                </input>
-                <p>Password:</p>
-                <input
-                    type="password"
-                    placeholder='password'
-                    onChange={(event) => setPassword(event.target.value)}>
-                </input>
-                <div className={classes.buttons}>
-                    <input type="submit" value="Login" className={classes.logIn}></input>
-                    <input type="submit" value="Sign Up" className={classes.signUp}></input>
-                    {/* <button onClick = {returnToLanding}>Go Back</button> */}
-                </div>
-            </form>
+        <div className={classes.container}>
+                    {/* <input type="submit" value="Login" className={classes.logIn}></input>
+                    <input type="submit" value="Sign Up" className={classes.signUp}></input> */}
+
+          
+            <div className = {classes.leftContainer}>
+                <img className = {classes.woman} src={WomanFlipped}></img>
+            </div>
+            <div className = {classes.rightContainer}>
+                { isLogin && <Login></Login> }
+                { !isLogin && <div>THIS IS THE SIGNUP COMPONENT</div> }
+                <button onClick={() => setIsLogin(!isLogin)}>{`${isLogin ? "Sign up" : "Log in"} instead`}</button>
+            </div>
+        
+
+            
         </div>
     )
 }

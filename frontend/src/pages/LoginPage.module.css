@@ -1,12 +1,39 @@
-.main 
+.container 
 {
     display: flex;
     font-family: sans-serif;
     width: 100vw;
-    height: 100vh;
-    flex-direction: column;
+    height: calc(100vh - 100px);
+    flex-direction: row;
     align-items: center;
     justify-content: center;
+    padding-top: 0px;
+    background-color: green;
+}
+
+.leftContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:50%;
+    height: 100%;
+    background-color: red;
+
+}
+
+.rightContainer{
+    width: 50%;
+    height: 100%;
+    background-color: blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.woman{
+    height: 100%;
 }
 
 .buttons {
