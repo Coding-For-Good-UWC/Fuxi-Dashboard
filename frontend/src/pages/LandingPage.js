@@ -46,7 +46,7 @@ function LandingPage ()
                 <div className = {classes.leftContainer}>
                     <h1 className={classes.title}>Tapping into the power <br></br>of music for Persons<br></br> with Dementia</h1>
                     <h2 className = {classes.subtitle}>FUXI is an application made to assist Persons with <br></br>Dementia and those who care for them by tapping into the <br></br>power of music in improving wellbeing and engagement.</h2> 
-                    <button className = {classes.getStartedButton}>Get Started</button>
+                    <button onClick = {handleLogin} className = {classes.getStartedButton}>Get Started</button>
                 </div>
                 <div className = {classes.rightContainer}>
                     <img className = {classes.man} src = {Man}></img>

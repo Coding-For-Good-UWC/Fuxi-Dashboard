@@ -1,6 +1,7 @@
 import classes from './Login.module.css'
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import * as FaIcons from "react-icons/fa"; 
 
 function Login() {
     const navigate = useNavigate();
@@ -33,21 +34,30 @@ function Login() {
     }
 
     return (
-        <div className={classes.main}>
-            <h1>Login</h1>
-            <form onSubmit={(event) => handleLogin(event)}>
-                <p>Username:</p>
-                <input
-                    type="text"
-                    placeholder='username'
-                    onChange={(event) => setUsername(event.target.value)}>
-                </input>
-                <p>Password:</p>
-                <input
-                    type="password"
-                    placeholder='password'
-                    onChange={(event) => setPassword(event.target.value)}>
-                </input>
+        <div className={classes.container}>
+            <h1 className = {classes.title}>Welcome Back!</h1>
+            <h2 className = {classes.subtitle}>Log in to continue</h2>
+            <form className = {classes.form} onSubmit={(event) => handleLogin(event)}>
+                <div className = {classes.usernamePassword}>
+                {/* <p>Username:</p> */}
+                    <input
+                        className = {classes.loginSignupInput}
+                        type="text"
+                        placeholder='Username'
+                        onChange={(event) => setUsername(event.target.value)}>
+                    </input>
+                    <FaIcons.FaUser className={classes.loginSignupInputIcon} />
+                </div>
+                <div className = {classes.usernamePassword}>
+                    {/* <p>Password:</p> */}
+                    <input
+                        className = {classes.loginSignupInput}
+                        type="password"
+                        placeholder='Password'
+                        onChange={(event) => setPassword(event.target.value)}>
+                    </input>
+                    <FaIcons.FaLock className = {classes.loginSignupInputIcon}></FaIcons.FaLock>
+                </div>
                 <div className={classes.buttons}>
                     <input type="submit" value="Login" className={classes.logIn}></input>
                     {/* <input value="Sign Up" className={classes.signUp} onClick={() => }></input> */}

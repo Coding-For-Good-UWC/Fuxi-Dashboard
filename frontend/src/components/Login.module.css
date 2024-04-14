@@ -1,0 +1,67 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+
+}
+
+.logIn{
+    display: flex;
+    color: white;
+    background-color: var(--genreHindi);
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+    background-color: var(--genreHindi);
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.3);
+    color: white;
+    font-size: 20px;
+    font-weight: 300;
+    width: 320px;
+    height: 40px;
+    border-radius: 10px;
+    
+}
+
+.title{
+    margin: 0px;
+    text-align: left;
+}
+
+.subtitle{
+    text-align: left;
+}
+
+.usernamePassword{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-bottom: 20px;
+    align-items: left;
+    position: relative;
+
+}
+
+.loginSignupInput{
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.3);
+    padding-left: 40px;
+    /* position: relative; */
+}
+
+.loginSignupInputIcon
+{
+    position: absolute;
+    top: 32.5%;
+    left: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+.form{
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    background-color: red;
+}

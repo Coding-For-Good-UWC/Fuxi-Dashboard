@@ -44,12 +44,12 @@ function LoginPage() {
 
           
             <div className = {classes.leftContainer}>
-                <img className = {classes.woman} src={WomanFlipped}></img>
+                { !isLogin && <Login></Login> }
+                { isLogin && <div>THIS IS THE SIGNUP COMPONENT</div> }
+                <button className = {classes.toggleLoginSignup} onClick={() => setIsLogin(!isLogin)}>{`${isLogin ? "Log in" : "Sign up"} instead`}</button>
             </div>
             <div className = {classes.rightContainer}>
-                { isLogin && <Login></Login> }
-                { !isLogin && <div>THIS IS THE SIGNUP COMPONENT</div> }
-                <button onClick={() => setIsLogin(!isLogin)}>{`${isLogin ? "Sign up" : "Log in"} instead`}</button>
+                <img onClick = {returnToLanding} className = {classes.woman} src={WomanFlipped}></img>
             </div>
         
 
