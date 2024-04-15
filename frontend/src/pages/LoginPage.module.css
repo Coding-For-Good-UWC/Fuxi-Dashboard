@@ -11,21 +11,23 @@
  
 }
 
-.leftContainer{
+.rightContainer{
     display: flex;
     flex-direction: column;
     align-items: left;
-    justify-content: center;
-    width:40%;
+    justify-content: top;
+    width:50%;
     height: 100%;
-    padding-left: 50px;
+    padding-left: 0px;
+    gap: 75px
+    /* background-color: blue; */
 
 
 
 }
 
-.rightContainer{
-    width: 70%;
+.leftContainer{
+    width: 50%;
     height: 100%;
     /* background-color: blue; */
     display: flex;
@@ -33,11 +35,13 @@
     justify-content: center;
     flex-direction: column;
     gap: 0px;
+    /* background-color: red; */
 
 }
 
 .woman{
     height: 700px;
+   
 }
 
 
@@ -78,5 +82,15 @@
     width: 320px;
     height: 40px;
     border-radius: 10px;
+
+}
+
+.toggle{
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    padding-right: 110px;
+    margin-top: 70px;
 
 }

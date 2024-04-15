@@ -42,14 +42,15 @@ function LoginPage() {
                     {/* <input type="submit" value="Login" className={classes.logIn}></input>
                     <input type="submit" value="Sign Up" className={classes.signUp}></input> */}
 
-          
             <div className = {classes.leftContainer}>
+                <img onClick = {returnToLanding} className = {classes.woman} src={WomanFlipped}></img>
+            </div>
+          
+            <div className = {classes.rightContainer}>
+                <h2 className = {classes.toggle} onClick={() => setIsLogin(!isLogin)}>{`${isLogin ? "Log in" : "Sign up"} instead`}</h2>
                 { !isLogin && <Login></Login> }
                 { isLogin && <div>THIS IS THE SIGNUP COMPONENT</div> }
-                <button className = {classes.toggleLoginSignup} onClick={() => setIsLogin(!isLogin)}>{`${isLogin ? "Log in" : "Sign up"} instead`}</button>
-            </div>
-            <div className = {classes.rightContainer}>
-                <img onClick = {returnToLanding} className = {classes.woman} src={WomanFlipped}></img>
+                {/* <button className = {classes.toggleLoginSignup} onClick={() => setIsLogin(!isLogin)}>{`${isLogin ? "Log in" : "Sign up"} instead`}</button> */}
             </div>
         
 
