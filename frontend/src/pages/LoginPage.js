@@ -47,7 +47,10 @@ function LoginPage() {
             </div>
           
             <div className = {classes.rightContainer}>
-                <h2 className = {classes.toggle} onClick={() => setIsLogin(!isLogin)}>{`${isLogin ? "Log in" : "Sign up"} instead`}</h2>
+                <div className = {classes.toggleContainer}>
+                    <h2 className = {classes.toggleText} >{`${isLogin ? "Already Have an Account?" : "New User?"}`}</h2>
+                    <h2 className = {classes.toggle} onClick={() => setIsLogin(!isLogin)}>{`${isLogin ? "Log In" : "Sign Up"}`}</h2>
+                </div>
                 { !isLogin && <Login></Login> }
                 { isLogin && <div>THIS IS THE SIGNUP COMPONENT</div> }
                 {/* <button className = {classes.toggleLoginSignup} onClick={() => setIsLogin(!isLogin)}>{`${isLogin ? "Log in" : "Sign up"} instead`}</button> */}

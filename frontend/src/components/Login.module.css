@@ -14,14 +14,13 @@
     align-items: center;
     justify-content: center;
     margin-top: 40px;
-    box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
     color: white;
     font-size: 20px;
     font-weight: 300;
     width: 220px;
     height: 70px;
     border-radius: 100px;
-    box-shadow: none;
+    box-shadow: none !important;
     
 }
 
@@ -70,4 +69,22 @@
     align-items: start;
     justify-content: center;
     /* background-color: red; */
+}
+
+.buttons{
+    box-shadow: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    gap: 100px;
+}
+
+.forgotPassword{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    margin-top: 55px;
+    font-size: 15px;
 }

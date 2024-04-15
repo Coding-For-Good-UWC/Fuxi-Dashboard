@@ -19,7 +19,7 @@
     width:50%;
     height: 100%;
     padding-left: 0px;
-    gap: 75px
+    gap: 65px
     /* background-color: blue; */
 
 
@@ -32,7 +32,7 @@
     /* background-color: blue; */
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: top;
     flex-direction: column;
     gap: 0px;
     /* background-color: red; */
@@ -53,6 +53,7 @@
     height: 5vh;
     border-radius: 10vh;
     border-color: #137882;
+
 
 
 
@@ -86,11 +87,31 @@
 }
 
 .toggle{
-    background-color: aliceblue;
+    color: var(--deepTurquoise);
+    font-weight: 600;
     display: flex;
     flex-direction: row;
     justify-content: right;
     padding-right: 110px;
-    margin-top: 70px;
+    margin-top: 60px;
+    margin-left: 0;
+    
+}
 
+.toggleContainer{
+    display: flex;
+    flex-direction: row;
+    gap: 0;
+    align-items: center;
+    justify-content: right;
+}
+
+.toggleText{
+    font-weight: 100;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    padding-right: 5px;
+    margin-top: 60px;
+    margin-left: 0;
 }

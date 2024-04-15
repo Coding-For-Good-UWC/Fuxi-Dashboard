@@ -62,6 +62,7 @@ function Login() {
                     <input type="submit" value="Login" className={classes.logIn}></input>
                     {/* <input value="Sign Up" className={classes.signUp} onClick={() => }></input> */}
                     {/* <button onClick = {returnToLanding}>Go Back</button> */}
+                    <h2 className = {classes.forgotPassword}>FORGOT PASSWORD?</h2>
                 </div>
             </form>
         </div>
