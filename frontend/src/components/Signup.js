@@ -1,45 +1,44 @@
-import classes from './Login.module.css'
+ import classes from './Signup.module.css'
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import * as FaIcons from "react-icons/fa"; 
 
-function Login() {
-    const navigate = useNavigate();
+function Signup() {
+    const navigate = useNavigate;
 
     const [username, setUsername] = useState("");
+    const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
-    const returnToLanding = () => {
-        navigate("/");
-    }
-
-    const handleLogin = async (event) => {
+    const handleSignup = async(event) => {
         event.preventDefault();
 
         const dataToSend = {
             username: username,
+            email: email,
             password: password
         }
 
-        const response = await fetch("http://localhost:3001/user/existing",
-            {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(dataToSend)
-            })
+        const response = await fetch("http://localhost:3001/user/new",
+        {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(dataToSend)
+        })
 
-        const data = await response.json();
+    const data = await response.json();
 
-        console.log(data);
+    console.log(data);
+
     }
 
-    return (
+    return(
         <div className={classes.container}>
-            <h1 className = {classes.title}>Welcome Back!</h1>
-            <h2 className = {classes.subtitle}>Log in to continue</h2>
-            <form className = {classes.form} onSubmit={(event) => handleLogin(event)}>
-                <div className = {classes.usernamePassword}>
-                {/* <p>Username:</p> */}
+            <h1 className = {classes.title}>Create an Account</h1>
+            <h2 className = {classes.subtitle}>Sign up as an institution</h2>
+            <form className = {classes.form} onSubmit={(event) => handleSignup(event)}>
+                <div className = {classes.usernamePasswordEmail}>
+    
                     <input
                         className = {classes.loginSignupInput}
                         type="text"
@@ -48,7 +47,19 @@ function Login() {
                     </input>
                     <FaIcons.FaUser className={classes.loginSignupInputIcon} />
                 </div>
-                <div className = {classes.usernamePassword}>
+
+                <div className = {classes.usernamePasswordEmail}>
+    
+                    <input
+                        className = {classes.loginSignupInput}
+                        type="text"
+                        placeholder='Email'
+                        onChange={(event) => setEmail(event.target.value)}>
+                    </input>
+                    <FaIcons.FaEnvelope className={classes.loginSignupInputIcon} />
+                </div>
+
+                <div className = {classes.usernamePasswordEmail}>
                     {/* <p>Password:</p> */}
                     <input
                         className = {classes.loginSignupInput}
@@ -58,15 +69,17 @@ function Login() {
                     </input>
                     <FaIcons.FaLock className = {classes.loginSignupInputIcon}></FaIcons.FaLock>
                 </div>
+
                 <div className={classes.buttons}>
-                    <input type="submit" value="Login" className={classes.logIn}></input>
+                    <input type="submit" value="Sign Up" className={classes.signUp}></input>
                     {/* <input value="Sign Up" className={classes.signUp} onClick={() => }></input> */}
                     {/* <button onClick = {returnToLanding}>Go Back</button> */}
-                    <h2 className = {classes.forgotPassword}>FORGOT PASSWORD?</h2>
+                    {/* <h2 className = {classes.forgotPassword}>FORGOT PASSWORD?</h2> */}
                 </div>
             </form>
         </div>
     )
+
 }
 
-export default Login; 
+export default Signup

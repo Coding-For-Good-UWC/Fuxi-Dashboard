@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import classes from './LoginPage.module.css';
 import Login from '../components/Login';
+import Signup from '../components/Signup'
 import WomanFlipped from '../assets/WomanFlipped.png'
 // import Login from
 
@@ -52,7 +53,7 @@ function LoginPage() {
                     <h2 className = {classes.toggle} onClick={() => setIsLogin(!isLogin)}>{`${isLogin ? "Log In" : "Sign Up"}`}</h2>
                 </div>
                 { !isLogin && <Login></Login> }
-                { isLogin && <div>THIS IS THE SIGNUP COMPONENT</div> }
+                { isLogin && <Signup></Signup> }
                 {/* <button className = {classes.toggleLoginSignup} onClick={() => setIsLogin(!isLogin)}>{`${isLogin ? "Log in" : "Sign up"} instead`}</button> */}
             </div>
         

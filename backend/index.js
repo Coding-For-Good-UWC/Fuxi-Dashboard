@@ -38,7 +38,7 @@ app.get('/user', async (req, res) => {
     }
 })
 
-app.post('/user/new', async(req, res) =>
+app.post('/user/existing', async(req, res) =>
 {
     try{
         // const { username, password } = req.body;
@@ -46,7 +46,31 @@ app.post('/user/new', async(req, res) =>
         const username = req.body.username; 
         const password = req.body.password; 
 
-        const message = `TODO: make new user with username: ${username} and password: ${password}`; 
+        const message = `TODO: Check for user with : ${username} and password: ${password}`; 
+        
+        console.log (message); 
+
+        const dataToSend = { 
+            message: message 
+        }
+
+        res.status(200).json(dataToSend); 
+    }
+    catch (error) {
+        res.status(500).json({ message: "Server error" })
+    }
+})
+
+app.post('/user/new', async(req, res) => 
+{
+    try{
+        // const { username, password } = req.body;
+
+        const username = req.body.username; 
+        const email = req.body.email
+        const password = req.body.password; 
+
+        const message = `TODO: Create new user with : ${username} and password: ${password}`; 
         
         console.log (message); 
 
