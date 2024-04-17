@@ -35,13 +35,15 @@ function DashboardPage()
             <div className = {classes.grid}>
                 { Object.keys(categories).length > 0 && categories.map((category, index) => 
                     <div className={classes.categories} key={index}>
-                        <h2>{category.categoryName}</h2>
-                        {/* <h3>{category.colour}</h3> */}
-                        <div className = {classes.tags} style={{ backgroundColor: category.colour }} />
+                        <div className = {classes.categoryAndTag}>
+                            <h2 className = {classes.categoryName}>{category.categoryName}</h2>
+                            <div className = {classes.tags} style={{ backgroundColor: category.colour }} />
+                        </div>
+                        <h3 className = {classes.numberSongs}>{category.numberSongs} Songs</h3>
                     
                     </div>
                 )}
-            <h2 className = {classes.newCategory}>+</h2>
+            <div className = {classes.newCategory}>+</div>
             </div>
         </div>
 

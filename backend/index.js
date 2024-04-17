@@ -90,38 +90,45 @@ app.get("/dashboard/categories", async (req, res) => {
         const Dummy_Data = [
             {
                 _id: "0",
-                categoryName: "Country Music",
-                colour: 'purple'
+                categoryName: "Country",
+                colour: 'purple',
+                numberSongs: 12
             },
             {
                 _id: "1",
-                categoryName: "Malay Music",
-                colour: 'white'
+                categoryName: "Malay",
+                colour: 'white',
+                numberSongs: 18
             },
             {
                 _id: "2",
-                categoryName: "Balinese Traditional Music",
-                colour: 'green'
+                categoryName: "Balinese",
+                colour: 'green',
+                numberSongs: 3
             },
             {
                 _id: "3",
-                categoryName: "Singaporean Music",
-                colour: 'orange'
+                categoryName: "Singaporean",
+                colour: 'orange',
+                numberSongs: 14
             },
             {
                 _id: "4",
-                categoryName: "Chinese Music",
-                colour: 'pink'
+                categoryName: "Chinese",
+                colour: 'pink',
+                numberSongs: 8
             },
             {
                 _id: "5",
-                categoryName: "Japanese Music",
-                colour: 'blue'
+                categoryName: "Japanese",
+                colour: 'blue',
+                numberSongs: 11
             },
             {
                 _id: "6",
-                categoryName: "Classical Music",
-                colour: 'red'
+                categoryName: "Classical",
+                colour: 'red',
+                numberSongs: 9
             },
         ];
 
