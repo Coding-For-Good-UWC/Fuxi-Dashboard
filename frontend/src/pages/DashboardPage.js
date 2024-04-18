@@ -7,6 +7,10 @@ function DashboardPage()
 {
     const navigate = useNavigate();
 
+    const songDetails = () => {
+        navigate("/song/management")
+    }
+
     const [categories, setCategories] = useState({})
 
     const getCategoriesData = async () => {
@@ -34,7 +38,7 @@ function DashboardPage()
             <h1 className = {classes.songCategoriesText}>Song Categories</h1>
             <div className = {classes.grid}>
                 { Object.keys(categories).length > 0 && categories.map((category, index) => 
-                    <div className={classes.categories} key={index}>
+                    <div onClick = {songDetails}className={classes.categories} key={index}>
                         <div className = {classes.categoryAndTag}>
                             <h2 className = {classes.categoryName}>{category.categoryName}</h2>
                             <div className = {classes.tags} style={{ backgroundColor: category.colour }} />
