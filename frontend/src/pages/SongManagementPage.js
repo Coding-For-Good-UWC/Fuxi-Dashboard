@@ -9,6 +9,8 @@ function SongManagementPage()
 
     const [songs, setSongs] = useState("")
 
+    const [url, setUrl] = useState('')
+
     const getSongData = async () => {
         const response = await fetch("http://localhost:3001/song/category");
         const data = await response.json();
@@ -24,6 +26,26 @@ function SongManagementPage()
 
     console.log(songs)
 
+    const checkSong = async (event) => {
+        event.preventDefault();
+
+        const dataToSend = {
+            url: url
+        }
+
+        const response = await fetch("http://localhost:3001/song/new",
+            {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(dataToSend)
+            })
+
+        const data = await response.json();
+
+        console.log(data);
+
+        }
+
     useEffect(() => 
     {
         getSongData(); 
@@ -36,7 +58,20 @@ function SongManagementPage()
     return(
         <div className = {classes.container}>
 
- 
+            <div className= {classes.topContainer}>
+            <form onSubmit = {(event) => {checkSong(event)}} className = {classes.newSong}>
+                <h1 className = {classes.uploadSongText}>Upload New Song</h1>
+                <input 
+                className = {classes.urlInput}
+                placeholder='Paste Youtube URL Here'
+                type = 'text'
+                onChange={(event) => {setUrl(event.target.value)}}
+
+                ></input>
+                <button type = 'submit' className={classes.uploadButton}>Upload To Database</button>
+
+            </form>
+            </div>
 
             <div className = {classes.bottomContainer}>
 

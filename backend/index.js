@@ -228,6 +228,29 @@ app.get("/song/category", async (req, res) => {
     }
 })
 
+app.post('/song/new', async(req, res) =>
+{
+    try{
+        // const { username, password } = req.body;
+
+        const url = req.body.url; 
+        
+
+        const message = `TODO: Check for a song on youtube with the url ${url}`; 
+        
+        console.log (message); 
+
+        const dataToSend = { 
+            message: message 
+        }
+
+        res.status(200).json(dataToSend); 
+    }
+    catch (error) {
+        res.status(500).json({ message: "Server error" })
+    }
+})
+
 
 app.listen(PORT, () => // fire up express server
 {
