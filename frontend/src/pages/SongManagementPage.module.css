@@ -5,6 +5,9 @@
 }
 
 .topContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 200px
 
 }
 .bottomContainer{
@@ -15,7 +18,8 @@
     gap: 20px;
 }
 .songs{
-    width: 100%;
+    width: 60vw;
+
     height: 300px;
     padding-top: 15px;
     overflow-y: scroll;
@@ -23,7 +27,7 @@
     display: flex;
     flex-direction: column;
     justify-content: top;
-    align-items: center;
+    align-items: left;
     gap: 5px;
     
 }
@@ -61,4 +65,41 @@
 
 .subtitle{
     margin: 0
+}
+
+.newSong{
+    display: flex;
+    flex-direction: column;
+    gap: 50px
+}
+
+.urlInput{
+    width: 57.5vw;
+    padding-left: 40px;
+}
+
+.uploadButton{
+    background-color: #137882;
+    color: white;
+    width: 50vw;
+    height: 5vh;
+    border-radius: 10vh;
+    border-color: #137882;
+    box-shadow: none;
+}
+
+.urlAndLink{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    
+    
+}
+
+.link{
+    position: absolute;
+    margin: 0;
+    top: 32.5%;
+    left: 15px;
+
 }

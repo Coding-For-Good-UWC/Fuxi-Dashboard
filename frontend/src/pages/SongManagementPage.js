@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'; 
 import { useNavigate } from 'react-router-dom';
 import classes from './SongManagementPage.module.css';
+import * as FaIcons from "react-icons/fa"; 
 
 
 function SongManagementPage()
@@ -59,30 +60,34 @@ function SongManagementPage()
         <div className = {classes.container}>
 
             <div className= {classes.topContainer}>
-            <form onSubmit = {(event) => {checkSong(event)}} className = {classes.newSong}>
-                <h1 className = {classes.uploadSongText}>Upload New Song</h1>
-                <input 
-                className = {classes.urlInput}
-                placeholder='Paste Youtube URL Here'
-                type = 'text'
-                onChange={(event) => {setUrl(event.target.value)}}
+                <form onSubmit = {(event) => {checkSong(event)}} className = {classes.newSong}>
+                    <h1 className = {classes.subtitle}>Western Music</h1>
+                <div className ={classes.urlAndLink}>
+                    <input 
+                    className = {classes.urlInput}
+                    placeholder='Paste Youtube URL Here'
+                    type = 'text'
+                    onChange={(event) => {setUrl(event.target.value)}}
 
-                ></input>
-                <button type = 'submit' className={classes.uploadButton}>Upload To Database</button>
+                    ></input>
+                    <FaIcons.FaLink className = {classes.link}></FaIcons.FaLink>
+                </div>  
+                    <button type = 'submit' className={classes.uploadButton}>Upload To Database</button>
 
-            </form>
+                </form>
             </div>
 
             <div className = {classes.bottomContainer}>
 
            
-                <h1 className = {classes.subtitle}>Western Music</h1>
                 <div className = {classes.songs}>
                     { Object.keys(songs).length > 0 && songs.map((song, index) => 
                         <div className = {classes.songInfo}>
                             <img className = {classes.thumbnail} src = {song.url}></img>
                             <h2 className = {classes.songName}>{song.songName}</h2>
                             <h2 className = {classes.songArtist}>{song.songArtist}</h2>
+                            <FaIcons.FaEdit></FaIcons.FaEdit>
+                            <FaIcons.FaTrash></FaIcons.FaTrash>
                         </div>
                     )}
                 
