@@ -7,7 +7,8 @@
 .topContainer{
     display: flex;
     flex-direction: column;
-    gap: 200px
+    height: 40vh
+
 
 }
 .bottomContainer{
@@ -19,7 +20,6 @@
 }
 .songs{
     width: 60vw;
-
     height: 300px;
     padding-top: 15px;
     overflow-y: scroll;
@@ -28,7 +28,7 @@
     flex-direction: column;
     justify-content: top;
     align-items: left;
-    gap: 5px;
+    gap: 0px;
     
 }
 
@@ -37,29 +37,63 @@
     flex-direction: row;
     align-items: center;
     justify-content: left;
-    gap: 30px;
-    height: 25px;
+    gap: 0px;
+    height: 50px;
     width: 90%;
-    outline: 5px;
+    /* outline: 5px;
     outline-color: blue;
-    outline-style: solid;
+    outline-style: solid; */
+    /* border-bottom: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-top: 1px solid black; */
     padding: 10px;
+    background-color: lightgray
    
 
 }
 
-.songName{
-    font-size: 30px;
+.songInfoDark{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    gap: 0px;
+    height: 50px;
+    width: 90%;
+    /* outline: 5px;
+    outline-color: blue;
+    outline-style: solid; */
+    /* border-bottom: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-top: 1px solid black; */
+    padding: 10px;
+    background-color: rgb(179, 179, 179);
+   
+}
 
+.songName{
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    font-size: 25px;
+    font-weight: 500 !important;
+    margin: 0;
+    color: var(--deepTurquoise)
 }
 
 .songArtist{
-
+    margin: 0;
+    color: var(--deepTurquoise);
+    display: flex;
+    align-items: left;
+    font-size: 15px;
 }
 
 .thumbnail{
-    width: 20px;
-    height: 20px;
+    width: 55px;
+    height: 55px;
     object-fit: fill;
 }
 
@@ -70,7 +104,8 @@
 .newSong{
     display: flex;
     flex-direction: column;
-    gap: 50px
+    gap: 50px;
+    
 }
 
 .urlInput{
@@ -79,12 +114,11 @@
 }
 
 .uploadButton{
-    background-color: #137882;
+    background-color: var(--genreHindi);
     color: white;
-    width: 50vw;
+    width: 30vw;
     height: 5vh;
     border-radius: 10vh;
-    border-color: #137882;
     box-shadow: none;
 }
 
@@ -102,4 +136,47 @@
     top: 32.5%;
     left: 15px;
 
+}
+
+.nameAndArtist{
+    display: flex;
+    flex-direction: column;
+    /* background-color: red; */
+    align-items: top;
+    justify-content: center;
+
+}
+
+.icon{
+    font-size: 40px;
+}
+
+.rightSongInfo{
+    display: flex;
+    flex-direction: row;
+    align-items: right;
+    justify-content: right;
+    width: 50%;
+    gap: 90px;
+    padding-right: 1px;
+}
+
+.leftSongInfo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 50%;
+    gap: 20px;
+}
+
+.icons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.songLength{
+    color: var(--deepTurquoise);
 }

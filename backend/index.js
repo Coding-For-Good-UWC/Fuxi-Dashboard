@@ -155,61 +155,71 @@ app.get("/song/category", async (req, res) => {
                 songName: "Favella",
                 songArtist: "Tyler Johnson",
                 youtubeID: "1",
-                url: "https://wallpapers.com/images/hd/youtube-thumbnail-square-bokeh-0w17n2uctdf0rybg.jpg"
+                url: "https://wallpapers.com/images/hd/youtube-thumbnail-square-bokeh-0w17n2uctdf0rybg.jpg",
+                length: "2:49"
               },
               {
                 songName: "Midnight Sky",
                 songArtist: "Elisa Ray",
                 youtubeID: "2",
-                url: "https://wallpapers.com/images/hd/youtube-thumbnail-square-bokeh-0w17n2uctdf0rybg.jpg"
+                url: "https://wallpapers.com/images/hd/youtube-thumbnail-square-bokeh-0w17n2uctdf0rybg.jpg",
+                length: "1:27"
               },
               {
                 songName: "Golden Hour",
                 songArtist: "Martin Rhodes",
                 youtubeID: "3",
-                url: "https://wallpapers.com/images/hd/youtube-thumbnail-square-bokeh-0w17n2uctdf0rybg.jpg"
+                url: "https://wallpapers.com/images/hd/youtube-thumbnail-square-bokeh-0w17n2uctdf0rybg.jpg",
+                length: "2:15"
               },
               {
                 songName: "Silent Streets",
                 songArtist: "Lucy Hart",
                 youtubeID: "4",
-                url: "https://wallpapers.com/images/hd/youtube-thumbnail-square-bokeh-0w17n2uctdf0rybg.jpg"
+                url: "https://wallpapers.com/images/hd/youtube-thumbnail-square-bokeh-0w17n2uctdf0rybg.jpg",
+                length: "2:30"
               },
               {
                 songName: "Echoes",
                 songArtist: "Connor Lee",
                 youtubeID: "5",
-                url: "https://wallpapers.com/images/hd/youtube-thumbnail-square-bokeh-0w17n2uctdf0rybg.jpg"
+                url: "https://wallpapers.com/images/hd/youtube-thumbnail-square-bokeh-0w17n2uctdf0rybg.jpg",
+                length: "2:50"
               },
               {
                 songName: "Lost in the Wind",
                 songArtist: "Sophia Bell",
                 youtubeID: "6",
-                url: "https://wallpapers.com/images/hd/youtube-thumbnail-square-bokeh-0w17n2uctdf0rybg.jpg"
+                url: "https://wallpapers.com/images/hd/youtube-thumbnail-square-bokeh-0w17n2uctdf0rybg.jpg",
+                length: "1:42"
               },
               {
                 songName: "Neon Dreams",
                 songArtist: "Jason Meyer",
                 youtubeID: "7",
-                url: "https://wallpapers.com/images/hd/youtube-thumbnail-square-bokeh-0w17n2uctdf0rybg.jpg"
+                url: "https://wallpapers.com/images/hd/youtube-thumbnail-square-bokeh-0w17n2uctdf0rybg.jpg",
+                length: "1:23"
               },
               {
                 songName: "River Song",
                 songArtist: "Amelia Grant",
                 youtubeID: "8",
-                url: "https://wallpapers.com/images/hd/youtube-thumbnail-square-bokeh-0w17n2uctdf0rybg.jpg"
+                url: "https://wallpapers.com/images/hd/youtube-thumbnail-square-bokeh-0w17n2uctdf0rybg.jpg",
+                length: "1:23"
               },
               {
                 songName: "Whispering Woods",
                 songArtist: "Nate Young",
                 youtubeID: "9",
-                url: "https://wallpapers.com/images/hd/youtube-thumbnail-square-bokeh-0w17n2uctdf0rybg.jpg"
+                url: "https://wallpapers.com/images/hd/youtube-thumbnail-square-bokeh-0w17n2uctdf0rybg.jpg",
+                length: "2:16"
               },
               {
                 songName: "Starlight Avenue",
                 songArtist: "Ella Knox",
                 youtubeID: "10",
-                url: "https://wallpapers.com/images/hd/youtube-thumbnail-square-bokeh-0w17n2uctdf0rybg.jpg"
+                url: "https://wallpapers.com/images/hd/youtube-thumbnail-square-bokeh-0w17n2uctdf0rybg.jpg",
+                length: "3:02"
               }
              
         ];

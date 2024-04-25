@@ -81,14 +81,43 @@ function SongManagementPage()
 
            
                 <div className = {classes.songs}>
+                    
                     { Object.keys(songs).length > 0 && songs.map((song, index) => 
-                        <div className = {classes.songInfo}>
+                    index % 2 === 0 ? 
+                    <div className = {classes.songInfo}>
+                        <div className = {classes.leftSongInfo}>
                             <img className = {classes.thumbnail} src = {song.url}></img>
-                            <h2 className = {classes.songName}>{song.songName}</h2>
-                            <h2 className = {classes.songArtist}>{song.songArtist}</h2>
-                            <FaIcons.FaEdit></FaIcons.FaEdit>
-                            <FaIcons.FaTrash></FaIcons.FaTrash>
+                            <div className = {classes.nameAndArtist}>
+                                <h2 className = {classes.songName}>{song.songName}</h2>
+                                <h2 className = {classes.songArtist}>{song.songArtist}</h2>
                         </div>
+                            </div>
+                            <div className = {classes.rightSongInfo}>
+                                <h2 className = {classes.songLength}>{song.length}</h2>
+                                <div className = {classes.icons}>
+                                    <FaIcons.FaEdit className = {classes.icon}></FaIcons.FaEdit>
+                                    <FaIcons.FaTrash className = {classes.icon}></FaIcons.FaTrash>
+                                </div>
+                            </div>
+                        </div>
+                    : 
+                    <div className = {classes.songInfoDark}>
+                        <div className = {classes.leftSongInfo}>
+                            <img className = {classes.thumbnail} src = {song.url}></img>
+                            <div className = {classes.nameAndArtist}>
+                                <h2 className = {classes.songName}>{song.songName}</h2>
+                                <h2 className = {classes.songArtist}>{song.songArtist}</h2>
+                            </div>
+                        </div>
+                            <div className = {classes.rightSongInfo}>
+                                <h2 className = {classes.songLength}>{song.length}</h2>
+                                <div className = {classes.icons}>
+                                    <FaIcons.FaEdit className = {classes.icon}></FaIcons.FaEdit>
+                                    <FaIcons.FaTrash className = {classes.icon}></FaIcons.FaTrash>
+                                </div>
+                            </div>
+                        </div>
+                        
                     )}
                 
                 </div>
