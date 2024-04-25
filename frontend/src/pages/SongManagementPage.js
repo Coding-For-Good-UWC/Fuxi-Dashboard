@@ -106,7 +106,7 @@ function SongManagementPage()
                             </div>
                         </div>
                     : 
-                    <div className = {classes.songInfoDark}>
+                    <div className = {classes.songInfoDark} onClick = {toSongPreviewPage}>
                         <div className = {classes.leftSongInfo}>
                             <img className = {classes.thumbnail} src = {song.url}></img>
                             <div className = {classes.nameAndArtist}>
