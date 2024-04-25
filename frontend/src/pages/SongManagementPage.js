@@ -12,6 +12,11 @@ function SongManagementPage()
 
     const [url, setUrl] = useState('')
 
+    const toSongPreviewPage = () => 
+    {
+        navigate("/song/preview")
+    }
+
     const getSongData = async () => {
         const response = await fetch("http://localhost:3001/song/category");
         const data = await response.json();
@@ -84,7 +89,7 @@ function SongManagementPage()
                     
                     { Object.keys(songs).length > 0 && songs.map((song, index) => 
                     index % 2 === 0 ? 
-                    <div className = {classes.songInfo}>
+                    <div onClick = {toSongPreviewPage} className = {classes.songInfo}>
                         <div className = {classes.leftSongInfo}>
                             <img className = {classes.thumbnail} src = {song.url}></img>
                             <div className = {classes.nameAndArtist}>
