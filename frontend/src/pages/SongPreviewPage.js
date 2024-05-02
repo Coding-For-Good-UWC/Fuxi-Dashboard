@@ -17,6 +17,7 @@ function SongPreviewPage()
         <div className = {classes.container}>
 
             <h1>Preview Songs</h1>
+            <h1>Test</h1>
             <div className = {classes.togglePausePlay}>
 
                 <FaIcons.FaAngleDoubleLeft className = {classes.icon}></FaIcons.FaAngleDoubleLeft>
