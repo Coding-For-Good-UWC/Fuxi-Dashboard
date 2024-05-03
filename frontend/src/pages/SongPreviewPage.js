@@ -15,18 +15,20 @@ function SongPreviewPage()
 
     return(
         <div className = {classes.container}>
+            <div className = {classes.topContainer}>
+                <h1>Preview Songs</h1>
+                <h2 className = {classes.songDetails}>Favella - Tyler Johnson</h2>
+            </div>
 
-            <h1>Preview Songs</h1>
-            <h1>Test</h1>
-            <div className = {classes.togglePausePlay}>
 
-                <FaIcons.FaAngleDoubleLeft className = {classes.icon}></FaIcons.FaAngleDoubleLeft>
+            <div className = {classes.bottomContainer}>
+                <FaIcons.FaStepBackward className = {classes.icon}></FaIcons.FaStepBackward>
                 <div className = {classes.toggle} onClick = {() => setIsPlay(!isPlay)}>
-                    { !isPlay && <FaIcons.FaPlay className = {classes.icon}></FaIcons.FaPlay> }
-                    { isPlay &&   <FaIcons.FaPause className = {classes.icon}></FaIcons.FaPause> }
+                    { !isPlay && <FaIcons.FaPlayCircle className = {classes.iconBig}></FaIcons.FaPlayCircle> }
+                    { isPlay &&   <FaIcons.FaPauseCircle className = {classes.iconBig}></FaIcons.FaPauseCircle> }
                 </div>
         
-                <FaIcons.FaAngleDoubleRight className = {classes.icon}></FaIcons.FaAngleDoubleRight>
+                <FaIcons.FaStepForward className = {classes.icon}></FaIcons.FaStepForward>
                 
             </div>
 

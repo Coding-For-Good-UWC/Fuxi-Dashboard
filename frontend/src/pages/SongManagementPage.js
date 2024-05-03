@@ -12,9 +12,12 @@ function SongManagementPage()
 
     const [url, setUrl] = useState('')
 
-    const toSongPreviewPage = () => 
+    const [currSongIndex, setcurrSongIndex] = useState("-1")
+
+    const songPreviewIndex = (index) => 
     {
-        navigate("/song/preview")
+        setcurrSongIndex(index)
+        console.log(currSongIndex)
     }
 
     const getSongData = async () => {
@@ -31,6 +34,10 @@ function SongManagementPage()
     }
 
     console.log(songs)
+
+
+    
+
 
     const checkSong = async (event) => {
         event.preventDefault();
@@ -55,6 +62,7 @@ function SongManagementPage()
     useEffect(() => 
     {
         getSongData(); 
+        songPreviewIndex();
     }, []); 
    
 
@@ -89,7 +97,7 @@ function SongManagementPage()
                     
                     { Object.keys(songs).length > 0 && songs.map((song, index) => 
                     index % 2 === 0 ? 
-                    <div onClick = {toSongPreviewPage} className = {classes.songInfo}>
+                    <div onClick = {() => {songPreviewIndex(index)}} className = {classes.songInfo}>
                         <div className = {classes.leftSongInfo}>
                             <img className = {classes.thumbnail} src = {song.url}></img>
                             <div className = {classes.nameAndArtist}>
@@ -106,7 +114,7 @@ function SongManagementPage()
                             </div>
                         </div>
                     : 
-                    <div className = {classes.songInfoDark} onClick = {toSongPreviewPage}>
+                    <div className = {classes.songInfoDark}>
                         <div className = {classes.leftSongInfo}>
                             <img className = {classes.thumbnail} src = {song.url}></img>
                             <div className = {classes.nameAndArtist}>
