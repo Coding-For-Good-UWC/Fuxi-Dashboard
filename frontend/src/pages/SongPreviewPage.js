@@ -1,5 +1,5 @@
-import React, { useState } from 'react'; 
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from 'react'; 
+import { useNavigate, useLocation } from 'react-router-dom';
 import * as FaIcons from "react-icons/fa"; 
 import classes from './SongPreviewPage.module.css'
 
@@ -8,8 +8,17 @@ function SongPreviewPage()
 {
     const navigate = useNavigate();
 
-    const [isPlay, setIsPlay] = React.useState(true)
+    const location = useLocation(); 
+    const { selectedSong } = location.state; 
 
+    const [isPlay, setIsPlay] = useState(true)
+
+
+    useEffect(() => 
+    {
+        console.log ("HERE:")
+        console.log (selectedSong); 
+    }, []); 
 
 
 
@@ -17,7 +26,7 @@ function SongPreviewPage()
         <div className = {classes.container}>
             <div className = {classes.topContainer}>
                 <h1>Preview Songs</h1>
-                <h2 className = {classes.songDetails}>Favella - Tyler Johnson</h2>
+                <h2></h2>
             </div>
 
 

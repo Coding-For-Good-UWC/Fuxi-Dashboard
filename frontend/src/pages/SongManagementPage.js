@@ -1,29 +1,45 @@
 import React, { useState, useEffect } from 'react'; 
-import { useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 import classes from './SongManagementPage.module.css';
 import * as FaIcons from "react-icons/fa"; 
+
 
 
 function SongManagementPage()
 {
     const navigate = useNavigate();
 
-    const [songs, setSongs] = useState("")
+    const [songs, setSongs] = useState([])
 
     const [url, setUrl] = useState('')
 
-    const [currSongIndex, setcurrSongIndex] = useState("-1")
-
+    const [currSongIndex, setCurrSongIndex] = useState("-1")
+    
     const songPreviewIndex = (index) => 
     {
-        setcurrSongIndex(index)
-        console.log(currSongIndex)
+        setCurrSongIndex(index)
+        // console.log(currSongIndex)
+
+        navigate("/song/preview", 
+            { state: {
+                selectedSong: songs[index]
+            }}
+        );
     }
 
+    useEffect(() => 
+    {
+        console.log (currSongIndex)
+    }, [currSongIndex])
+    
+
+
+
     const getSongData = async () => {
+        // console.log ("HI")
         const response = await fetch("http://localhost:3001/song/category");
         const data = await response.json();
-        console.log(data)
+        // console.log(data)
 
         if (data.status === "ERROR") {
             alert(data.message);
@@ -33,11 +49,16 @@ function SongManagementPage()
         setSongs(data.songs)
     }
 
-    console.log(songs)
-
+    // console.log(songs)
 
     
-
+    // const toSongPreviewPage = () => {
+    //     navigate("/song/preview", 
+    //         { state: {
+    //             selectedSong: songs[currSongIndex]
+    //         }}
+    //     );
+    // }
 
     const checkSong = async (event) => {
         event.preventDefault();
@@ -55,14 +76,15 @@ function SongManagementPage()
 
         const data = await response.json();
 
-        console.log(data);
+        // console.log(data);
+        // console.log(songs)
 
         }
 
     useEffect(() => 
     {
         getSongData(); 
-        songPreviewIndex();
+        // songPreviewIndex();
     }, []); 
    
 
@@ -86,6 +108,7 @@ function SongManagementPage()
                     <FaIcons.FaLink className = {classes.link}></FaIcons.FaLink>
                 </div>  
                     <button type = 'submit' className={classes.uploadButton}>Upload To Database</button>
+                    {/* <button onClick = {toSongPreviewPage}> Route to Song Preview Page</button> */}
 
                 </form>
             </div>
@@ -97,7 +120,7 @@ function SongManagementPage()
                     
                     { Object.keys(songs).length > 0 && songs.map((song, index) => 
                     index % 2 === 0 ? 
-                    <div onClick = {() => {songPreviewIndex(index)}} className = {classes.songInfo}>
+                    <div onClick = {() => songPreviewIndex(index)} className = {classes.songInfo}>
                         <div className = {classes.leftSongInfo}>
                             <img className = {classes.thumbnail} src = {song.url}></img>
                             <div className = {classes.nameAndArtist}>
@@ -114,7 +137,7 @@ function SongManagementPage()
                             </div>
                         </div>
                     : 
-                    <div className = {classes.songInfoDark}>
+                    <div onClick = {() => songPreviewIndex(index)}  className = {classes.songInfoDark}>
                         <div className = {classes.leftSongInfo}>
                             <img className = {classes.thumbnail} src = {song.url}></img>
                             <div className = {classes.nameAndArtist}>
@@ -141,7 +164,6 @@ function SongManagementPage()
         </div>
     )
 }
-
 
 
 export default SongManagementPage;

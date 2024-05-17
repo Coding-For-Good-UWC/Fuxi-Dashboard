@@ -87,6 +87,8 @@ app.post('/user/new', async(req, res) =>
 
 app.get("/dashboard/categories", async (req, res) => {
     try {
+        console.log ("HI")
+
         const Dummy_Data = [
             {
                 _id: "0",
