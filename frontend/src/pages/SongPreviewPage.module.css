@@ -13,11 +13,11 @@
 
 .topContainer{
 width: 100%;
-height: 45%;
+height: 100%;
 display: flex;
 flex-direction: column;
 align-items: center;
-background-color: red;
+justify-content: top;
 }
 
 .bottomContainer{
@@ -38,4 +38,30 @@ background-color: red;
 
 .iconBig{
     font-size: 120px;
+}
+
+
+.songInfo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.songThumbnail{
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+}
+
+.playButtons{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+.songDetails{
+    color: green;
 }

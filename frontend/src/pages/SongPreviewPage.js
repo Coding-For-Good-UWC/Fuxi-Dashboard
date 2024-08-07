@@ -18,6 +18,7 @@ function SongPreviewPage()
     {
         console.log ("HERE:")
         console.log (selectedSong); 
+        console.log(selectedSong.url)
     }, []); 
 
 
@@ -26,11 +27,12 @@ function SongPreviewPage()
         <div className = {classes.container}>
             <div className = {classes.topContainer}>
                 <h1>Preview Songs</h1>
-                <h2></h2>
-            </div>
+                <div className = {classes.songInfo}>
+                    <img className = {classes.songThumbnail} src = {selectedSong.url}></img>
+                    <h2 className = {classes.songDetails}>{`${selectedSong.songName} - ${selectedSong.songArtist}`}</h2>
 
-
-            <div className = {classes.bottomContainer}>
+                </div>
+                <div className = {classes.playButtons}>
                 <FaIcons.FaStepBackward className = {classes.icon}></FaIcons.FaStepBackward>
                 <div className = {classes.toggle} onClick = {() => setIsPlay(!isPlay)}>
                     { !isPlay && <FaIcons.FaPlayCircle className = {classes.iconBig}></FaIcons.FaPlayCircle> }
@@ -38,8 +40,11 @@ function SongPreviewPage()
                 </div>
         
                 <FaIcons.FaStepForward className = {classes.icon}></FaIcons.FaStepForward>
-                
+                </div>
             </div>
+
+
+            
 
         </div>
     )
