@@ -41,19 +41,19 @@ function LandingPage ()
     }
 
     return (
-        <div className = {classes.container}>
-            <div className = {classes.topContainer}>
-                <div className = {classes.leftContainer}>
-                    <h1 className="title">Tapping into the power <br></br>of music for Persons<br></br> with Dementia</h1>
-                    <h2 className = {classes.subtitle}>FUXI is an application made to assist Persons with <br></br>Dementia and those who care for them by tapping into the <br></br>power of music in improving wellbeing and engagement.</h2> 
-                    <button onClick = {handleLogin} className = {classes.getStartedButton}>Get Started</button>
+        <div className="flex flex-col">
+            <div className="flex flex-row items-center justify-center pr-[100px] pl-[100px]">
+                <div className="flex flex-col w-1/2 h-4/5 items-start justify-center gap-0">
+                    <h1 className="font-bold leading-[65px] mb-[30px]">Tapping into the power <br></br>of music for Persons<br></br> with Dementia</h1>
+                    <h2 className="flex items-start text-left text-[20px] leading-[30px]">FUXI is an application made to assist Persons with <br></br>Dementia and those who care for them by tapping into the <br></br>power of music in improving wellbeing and engagement.</h2> 
+                    <button onClick = {handleLogin} className="w-[300px] h-[70px] rounded-[10px] mt-[40px] bg-genreHindi shadow-black text-[20px] font-light text-white">Get Started</button>
                     
                 </div>
-                <div className = {classes.rightContainer}>
-                    <img className = {classes.man} src = {Man}></img>
+                <div className="flex w-1/2 h-4/5 items-center justify-center">
+                    <img className="flex items-center justify-center h-[600px]" src = {Man}></img>
                 </div>
             </div>
-            <div className = {classes.bottomContainer}>
+            <div className="flex flex-col items-center">
                 <FaIcons.FaAngleDoubleDown></FaIcons.FaAngleDoubleDown>
             <p>
             FUXI is an application made to assist Persons with Dementia and those who care for them by tapping into the power of music in improving wellbeing and engagement.

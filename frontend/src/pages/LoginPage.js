@@ -1,66 +1,34 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import classes from './LoginPage.module.css';
 import Login from '../components/Login';
-import Signup from '../components/Signup'
-import WomanFlipped from '../assets/WomanFlipped.png'
-// import Login from
+import Signup from '../components/Signup';
+import WomanFlipped from '../assets/WomanFlipped.png';
 
 function LoginPage() {
     const navigate = useNavigate();
 
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
-
-    const [isLogin, setIsLogin] = useState(false); // is it login or signup? 
+    const [isLogin, setIsLogin] = useState(false);
 
     const returnToLanding = () => {
         navigate("/");
     }
 
-    const handleLogin = async (event) => {
-        event.preventDefault();
-
-        const dataToSend = {
-            username: username,
-            password: password
-        }
-
-        const response = await fetch("http://localhost:3001/user/new",
-            {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(dataToSend)
-            })
-
-        const data = await response.json();
-
-        // console.log(data);
-    }
-
     return (
-        <div className={classes.container}>
-                    {/* <input type="submit" value="Login" className={classes.logIn}></input>
-                    <input type="submit" value="Sign Up" className={classes.signUp}></input> */}
-
-            <div className = {classes.leftContainer}>
-                <img onClick = {returnToLanding} className = {classes.woman} src={WomanFlipped}></img>
+        <div className="flex w-screen h-[calc(100vh-100px)] flex-row items-center justify-center">
+            <div className="flex flex-col items-center justify-start w-1/2 h-full">
+                <img onClick={returnToLanding} className="h-[700px]" src={WomanFlipped} alt="Woman Flipped" />
             </div>
-          
-            <div className = {classes.rightContainer}>
-                <div className = {classes.toggleContainer}>
-                    <h2 className = {classes.toggleText} >{`${isLogin ? "Already Have an Account?" : "New User?"}`}</h2>
-                    <h2 className = {classes.toggle} onClick={() => setIsLogin(!isLogin)}>{`${isLogin ? "Log In" : "Sign Up"}`}</h2>
+
+            <div className="flex flex-col items-start justify-start w-1/2 h-full gap-6">
+                <div className="flex flex-row items-center justify-end w-full gap-0 pr-[100px] mt-[60px]">
+                    <h2 className="font-light">{`${isLogin ? "Already Have an Account?" : "New User?"}`}</h2>
+                    <h2 className="font-semibold text-deepTurquoise cursor-pointer ml-2" onClick={() => setIsLogin(!isLogin)}>{`${isLogin ? "Log In" : "Sign Up"}`}</h2>
                 </div>
-                { !isLogin && <Login></Login> }
-                { isLogin && <Signup></Signup> }
-                {/* <button className = {classes.toggleLoginSignup} onClick={() => setIsLogin(!isLogin)}>{`${isLogin ? "Log in" : "Sign up"} instead`}</button> */}
+                {!isLogin && <Login />}
+                {isLogin && <Signup />}
             </div>
-        
-
-            
         </div>
-    )
+    );
 }
 
-export default LoginPage; 
+export default LoginPage;

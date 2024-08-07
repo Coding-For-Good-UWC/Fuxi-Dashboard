@@ -1,10 +1,9 @@
- import classes from './Signup.module.css'
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import * as FaIcons from "react-icons/fa"; 
 
 function Signup() {
-    const navigate = useNavigate;
+    const navigate = useNavigate();
 
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
@@ -26,60 +25,53 @@ function Signup() {
             body: JSON.stringify(dataToSend)
         })
 
-    const data = await response.json();
+        const data = await response.json();
 
-    // console.log(data);
+        // console.log(data);
 
     }
 
     return(
-        <div className={classes.container}>
-            <h1 className = {classes.title}>Create an Account</h1>
-            <h2 className = {classes.subtitle}>Sign up as an institution</h2>
-            <form className = {classes.form} onSubmit={(event) => handleSignup(event)}>
-                <div className = {classes.usernamePasswordEmail}>
-    
+        <div className="flex flex-col items-start justify-center ">
+            <h1 className="text-left text-5xl mb-2">Create an Account</h1>
+            <h2 className="text-left text-xl mt-1 mb-12">Sign up as an institution</h2>
+            <form className="flex flex-col items-start justify-center" onSubmit={(event) => handleSignup(event)}>
+                <div className="flex flex-row gap-2 mb-5 items-center relative w-full">
                     <input
-                        className = {classes.loginSignupInput}
+                        className="shadow-none pl-10 h-16 w-[600px] ring-2 ring-black rounded-none"
                         type="text"
                         placeholder='Username'
                         onChange={(event) => setUsername(event.target.value)}>
                     </input>
-                    <FaIcons.FaUser className={classes.loginSignupInputIcon} />
+                    <FaIcons.FaUser className="absolute top-1/2 left-4 transform -translate-y-1/2" />
                 </div>
 
-                <div className = {classes.usernamePasswordEmail}>
-    
+                <div className="flex flex-row gap-2 mb-5 items-center relative w-full">
                     <input
-                        className = {classes.loginSignupInput}
+                        className="shadow-none pl-10 h-16 w-[600px] ring-2 ring-black rounded-none"
                         type="text"
                         placeholder='Email'
                         onChange={(event) => setEmail(event.target.value)}>
                     </input>
-                    <FaIcons.FaEnvelope className={classes.loginSignupInputIcon} />
+                    <FaIcons.FaEnvelope className="absolute top-1/2 left-4 transform -translate-y-1/2" />
                 </div>
 
-                <div className = {classes.usernamePasswordEmail}>
-                    {/* <p>Password:</p> */}
+                <div className="flex flex-row gap-2 mb-5 items-center relative w-full">
                     <input
-                        className = {classes.loginSignupInput}
+                        className="shadow-none pl-10 h-16 w-[600px] ring-2 ring-black rounded-none"
                         type="password"
                         placeholder='Password'
                         onChange={(event) => setPassword(event.target.value)}>
                     </input>
-                    <FaIcons.FaLock className = {classes.loginSignupInputIcon}></FaIcons.FaLock>
+                    <FaIcons.FaLock className="absolute top-1/2 left-4 transform -translate-y-1/2" />
                 </div>
 
-                <div className={classes.buttons}>
-                    <input type="submit" value="Sign Up" className={classes.signUp}></input>
-                    {/* <input value="Sign Up" className={classes.signUp} onClick={() => }></input> */}
-                    {/* <button onClick = {returnToLanding}>Go Back</button> */}
-                    {/* <h2 className = {classes.forgotPassword}>FORGOT PASSWORD?</h2> */}
+                <div className="flex flex-row gap-24 items-center justify-center mt-10">
+                    <input type="submit" value="Sign Up" className="flex items-center justify-center bg-deepTurquoise text-white text-xl font-light w-56 h-16 rounded-full shadow-none"></input>
                 </div>
             </form>
         </div>
     )
-
 }
 
-export default Signup
+export default Signup;

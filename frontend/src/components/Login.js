@@ -1,4 +1,3 @@
-import classes from './Login.module.css'
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import * as FaIcons from "react-icons/fa"; 
@@ -34,39 +33,35 @@ function Login() {
     }
 
     return (
-        <div className={classes.container}>
-            <h1 className = {classes.title}>Welcome Back!</h1>
-            <h2 className = {classes.subtitle}>Log in to continue</h2>
-            <form className = {classes.form} onSubmit={(event) => handleLogin(event)}>
-                <div className = {classes.usernamePassword}>
-                {/* <p>Username:</p> */}
+        <div className="flex flex-col items-start justify-center">
+            <h1 className="text-left text-5xl">Welcome Back!</h1>
+            <h2 className="text-left mt-1 mb-12 text-xl">Log in to continue</h2>
+            <form className="flex flex-col items-start" onSubmit={(event) => handleLogin(event)}>
+                <div className="flex flex-row gap-2 mb-5 items-start relative">
                     <input
-                        className = {classes.loginSignupInput}
+                        className="pl-10 h-14 w-[600px] ring-2 ring-black shadow-none rounded-none"
                         type="text"
-                        placeholder='Username'
+                        placeholder="Username"
                         onChange={(event) => setUsername(event.target.value)}>
                     </input>
-                    <FaIcons.FaUser className={classes.loginSignupInputIcon} />
+                    <FaIcons.FaUser className="absolute top-1/2 left-3 transform -translate-y-1/2"/>
                 </div>
-                <div className = {classes.usernamePassword}>
-                    {/* <p>Password:</p> */}
+                <div className="flex flex-row gap-2 mb-5 items-start relative">
                     <input
-                        className = {classes.loginSignupInput}
+                        className="pl-10 h-14 w-[600px] ring-2 ring-black shadow-none rounded-none"
                         type="password"
-                        placeholder='Password'
+                        placeholder="Password"
                         onChange={(event) => setPassword(event.target.value)}>
                     </input>
-                    <FaIcons.FaLock className = {classes.loginSignupInputIcon}></FaIcons.FaLock>
+                    <FaIcons.FaLock className="absolute top-1/2 left-3 transform -translate-y-1/2"/>
                 </div>
-                <div className={classes.buttons}>
-                    <input type="submit" value="Login" className={classes.logIn}></input>
-                    {/* <input value="Sign Up" className={classes.signUp} onClick={() => }></input> */}
-                    {/* <button onClick = {returnToLanding}>Go Back</button> */}
-                    <h2 className = {classes.forgotPassword}>FORGOT PASSWORD?</h2>
+                <div className="flex flex-row items-center justify-center gap-24">
+                    <input type="submit" value="Login" className="text-white bg-deepTurquoise text-center items-center justify-center mt-10 text-2xl font-light w-56 h-14 rounded-full shadow-none"/>
+                    <h2 className="text-center flex items-center mt-14 text-base">FORGOT PASSWORD?</h2>
                 </div>
             </form>
         </div>
     )
 }
 
-export default Login; 
+export default Login;
