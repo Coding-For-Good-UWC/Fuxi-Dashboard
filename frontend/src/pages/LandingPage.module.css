@@ -34,10 +34,10 @@
     justify-content: center;
 }
 
-.title{
+/* .title{
     font-size: 50px;
 
-}
+} */
 .subtitle{
     display: flex;
     align-items: left;

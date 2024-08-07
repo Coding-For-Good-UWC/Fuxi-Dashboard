@@ -1,5 +1,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+@layer base{
+
+  :root
+  {
+      --bg: #F6F7F9;
+      --primary: #3F51B5;
+      --secondary: #E0E0E0;
+      --primaryText: #212121;
+      --voteUp: #4CAF50;
+      --voteDown: #F44336;
+      --tertiary: #7E57C2;
+      
+      --genreCantonese: #FFC107;
+      --genreChinese: #FF5722;
+      --genreChristian: #03A9F4;
+      --genreEnglish: #8BC34A;
+      --genreHainanese: #CDDC39;
+      --genreHindi: #FF9800;
+      --genreHokkien: #9C27B0;
+      --genreMalay: #009688;
+      --genreMandarin: #2196F3;
+      --genreTV: #F44336;
+      --genreTamil: #795548;
+  
+      --deepTurquoise: #137882;
+      --gray: #757575;
+      --lightBlue: #ECF4F8;
+  }
+  
 .App {
   text-align: center;
 }
@@ -65,4 +97,10 @@ form {
 ::-webkit-scrollbar-thumb {
   background-color: var(--gray);
   border-radius: 10px;
+}
+
+.title {
+  @apply font-bold leading-[65px]
+}
+
 }
